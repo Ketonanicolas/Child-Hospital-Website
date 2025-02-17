@@ -1,0 +1,351 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f5f9; /* Soft light blue-gray */
+    color: #2b2b2b;
+  }
+  
+  /* Header */
+  .header {
+    background: linear-gradient(90deg, #006d77, #83c5be);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideDown 0.8s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .header .logo {
+    font-size: 28px;
+    color: #edf6f9;
+    letter-spacing: 2px;
+  }
+  
+  .navbar a {
+    font-size: 16px;
+    color: #edf6f9;
+    margin: 0 20px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #edf6f9;
+    transition: width 0.3s, left 0.3s;
+  }
+  
+  .navbar a:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+  /* Banner */
+  .banner {
+    background: linear-gradient(135deg, #83c5be, #edf6f9);
+    color: #006d77;
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeInZoom 1s ease forwards;
+  }
+  
+  @keyframes fadeInZoom {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .banner h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    animation: popIn 0.5s ease forwards;
+  }
+  
+  @keyframes popIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .banner p {
+    font-size: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+  /* Button */
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    margin-top: 20px;
+    background-color: #006d77;
+    color: #edf6f9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #83c5be;
+    transform: translateY(-3px);
+  }
+  
+  /* Doctor Cards Section */
+  .doctors {
+    padding: 50px 20px;
+    background-color: #fff;
+  }
+  
+  .doctor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .doctor-card {
+    background-color: #edf6f9;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    width: 260px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .doctor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .doctor-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .doctor-card h3 {
+    font-size: 20px;
+    color: #006d77;
+    margin: 15px 0 5px;
+    text-align: center;
+  }
+  
+  .doctor-card p {
+    font-size: 14px;
+    color: #2b2b2b;
+    padding: 0 15px 15px;
+    text-align: center;
+  }
+  
+  /* Contact Form Section */
+  .contact-section {
+    padding: 60px 20px;
+    background-color: #f0f5f9;
+    text-align: center;
+  }
+  
+  .contact-section h1 {
+    font-size: 32px;
+    color: #006d77;
+    margin-bottom: 30px;
+  }
+  
+  .contact-section form {
+    background-color: #edf6f9;
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    position: relative;
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .contact-section form::before {
+    content: "✉️";
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+  }
+  
+  .contact-section label {
+    display: block;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #006d77;
+  }
+  
+  .contact-section input,
+  .contact-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 2px solid #83c5be;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .contact-section input:focus,
+  .contact-section textarea:focus {
+    border-color: #006d77;
+    outline: none;
+  }
+  
+  /* Submit Button in Contact Section */
+  .contact-section .btn {
+    background-color: #006d77;
+    margin-top: 20px;
+  }
+  
+  .contact-section .btn:hover {
+    background-color: #83c5be;
+  }
+  
+  /* About Section */
+  .about-container {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .about-banner {
+    background-color: #83c5be;
+    color: #edf6f9;
+    padding: 50px 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  
+  .about-text {
+    max-width: 500px;
+    text-align: left;
+  }
+  
+  .about-text h2 {
+    color: #006d77;
+    margin-bottom: 20px;
+  }
+  
+  .about-text ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-text ul li {
+    background-color: #edf6f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-left: 4px solid #006d77;
+  }
+  
+  /* About Image */
+  .about-image img {
+    width: 320px;
+    border-radius: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Founder Section */
+  .founder-section {
+    padding: 60px 20px;
+    background-color: #f0f5f9;
+    text-align: center;
+  }
+  
+  .founder-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .founder-info img {
+    width: 160px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  .founder-info img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Mission Section */
+  .mission-section {
+    padding: 60px 20px;
+    background-color: #edf6f9;
+    text-align: center;
+    border-top: 4px solid #006d77;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #006d77;
+    color: #edf6f9;
+    text-align: center;
+    padding: 20px;
+    animation: fadeInFooter 1s ease;
+  }
+  
+  @keyframes fadeInFooter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .footer a {
+    color: #edf6f9;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer a:hover {
+    color: #83c5be;
+  }
+  

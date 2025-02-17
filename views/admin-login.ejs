@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+
+.container{
+    max-width: 400px;
+    margin: 0 auto;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  color: #80cbc4;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  color: #4db6ac;
+  margin-top: 30px;
+  font-size: 24px;
+}
+
+/* Forms */
+form {
+  background-color: #1e1e1e;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #2b2b2b;
+  color: #e0e0e0;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #80cbc4;
+  outline: none;
+}
+
+input[type="file"] {
+  padding: 5px;
+  background-color: #1e1e1e;
+  border: none;
+}
+
+/* Buttons */
+button {
+  background-color: #80cbc4;
+  color: #121212;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #4db6ac;
+  transform: translateY(-3px);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+table, th, td {
+  border: 1px solid #333;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #263238;
+  color: #80cbc4;
+}
+
+td img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* Links */
+a {
+  color: #80cbc4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #4db6ac;
+}
+
+/* Logout Link */
+.logout {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logout a {
+  color: #ff8a80;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.logout a:hover {
+  color: #ff5252;
+  transform: scale(1.05);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="admin-container">
+        <h1>Admin Login</h1>
+        <form class="login-form" action="/admin-login" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

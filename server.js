@@ -94,12 +94,10 @@ app.post('/submit-contact', (req, res) => {
 
 // Admin page to add doctor info and view contact requests
 app.get('/admin', (req, res) => {
-    // Check if the user is logged in
     if (!req.session.adminLoggedIn) {
-        return res.redirect('/admin-login'); // Redirect to login if not logged in
+        return res.redirect('/admin-login');
     }
 
-    // Query to fetch doctors
     const doctorsQuery = "SELECT * FROM doctors";
     db.query(doctorsQuery, (err, doctorsResults) => {
         if (err) {
@@ -107,7 +105,15 @@ app.get('/admin', (req, res) => {
             return res.status(500).send("Database error");
         }
 
-        // Query to fetch contact form submissions
+        // Convert image data to Base64
+        const doctors = doctorsResults.map(doctor => ({
+            id: doctor.id,
+            name: doctor.name,
+            image: doctor.image ? Buffer.from(doctor.image).toString('base64') : '',
+            bio: doctor.bio,
+            phone_number: doctor.phone_number
+        }));
+
         const contactQuery = "SELECT * FROM contact_requests ORDER BY created_at DESC";
         db.query(contactQuery, (err, contactResults) => {
             if (err) {
@@ -115,8 +121,7 @@ app.get('/admin', (req, res) => {
                 return res.status(500).send("Database error");
             }
 
-            // Render the admin page with doctors and contact form data
-            res.render('admin', { doctors: doctorsResults, contactRequests: contactResults });
+            res.render('admin', { doctors, contactRequests: contactResults });
         });
     });
 });
